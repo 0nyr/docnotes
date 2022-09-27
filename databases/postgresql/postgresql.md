@@ -28,16 +28,36 @@
 
 [connect, create a db and a table](https://thedbadmin.com/how-to-connect-postgresql-database-from-pgadmin/) (good, fast)
 
-### Install process
+## Install process
 
 See [Install PostgreSQL 14 in Ubuntu](https://www.linuxshelltips.com/install-postgresql-in-ubuntu/) and [Install pgAdmin in Ubuntu](https://www.pgadmin.org/download/pgadmin-4-apt/) for all info.
 
 1. Install Postgres. Start by adding the signing key and PPA, then install package. The current latest LTS package is `postgresql-14`.
 2. Setup Postgres. `systemctl enable` to make Postgres start after reboot. Don't forget to set a password for the default `postgres` user. See section below.
-3. Install pgAdmin. Get key and PPA then install. Setup a master keyword and also provide the password of the `postgres` user.
+3. Install pgAdmin. Get key and PPA then install. Setup a master keyword and also provide the password of the `postgres` user using `sudo -u postgres psql` to connect to the shell of Postgres, then `\password postgres` to change the password of `postgres` user.
 
+## Connect PgAdmin
 
-### Commands
+[See on StackOverflow](https://stackoverflow.com/posts/41929466/timeline)
+
+Adding new server steps:
+
+1) Open pgAdmin4
+2) Right click in "Servers" in Browser panel
+3) Enter some meaningful name for Server eg: "PostgreSQL9.6"
+4) Click on "Connection" tab
+5) Enter "Host" (default is "localhost" if database is installed on your own local system otherwise IP address of system where PostgreSQL database is installed)
+6) Enter "Port" (default port for PostgreSQL server is "5432")
+7) Enter "Maintenance Database" name (default is "postgres")
+8) Enter "User Name" (default user is "postgres")
+9) Enter "Password" (Password which you gave when you installed PostgreSQL database for "postgres" user)
+10) Click on CheckBox "Save password?" to save your password in pgAdmin4 for future use.
+
+Now as you can see, "Save" button gets enable in dialog, just click on it.
+
+You will see that your server is now listed under "Servers" and you should be connected to your database.
+
+## Postgres Commands
 
 ##### start db server
 
@@ -125,16 +145,17 @@ Fisrt, you need a password for the user `postgres`.
 
 ### Packages
 
-| postgresql-client-12 | client libraries and client binaries |
-| - | - |
-| postgresql-12 | core database server |
-| postgresql-contrib-9.x | additional supplied modules (part of the postgresql-xx package in version 10 and later) |
-| libpq-dev | libraries and headers for C language frontend development |
-| postgresql-server-dev-12 | libraries and headers for C language backend development |
-| pgadmin4 | pgAdmin 4 graphical administration utility |
-
+| postgresql-client-12     | client libraries and client binaries                                                    |
+| ------------------------ | --------------------------------------------------------------------------------------- |
+| postgresql-12            | core database server                                                                    |
+| postgresql-contrib-9.x   | additional supplied modules (part of the postgresql-xx package in version 10 and later) |
+| libpq-dev                | libraries and headers for C language frontend development                               |
+| postgresql-server-dev-12 | libraries and headers for C language backend development                                |
+| pgadmin4                 | pgAdmin 4 graphical administration utility                                              |
 
 ## Postgres CLI
+
+`sudo -u postgres psql`: 
 
 ### show databases
 
@@ -143,5 +164,3 @@ Fisrt, you need a password for the user `postgres`.
 `select * from pg_database;`: show databases using SQL query.
 
 `\du`: show users and their associated rights
-
-

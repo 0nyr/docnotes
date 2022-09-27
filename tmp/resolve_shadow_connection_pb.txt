@@ -1,0 +1,5 @@
+# résoudre erreur de connection
+
+ ❮ onyr ★  kenzae❯ ❮ ~❯❯ sudo apt install gconf2 libgles2-mesa libubsan0 libuv1 libva-glx2
+ 
+ 

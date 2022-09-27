@@ -1,0 +1,50 @@
+# following tuto: https://askubuntu.com/questions/604998/install-launch4j-in-ubuntu-14-04
+# source code for launch4j-3.12-linux.tgz: https://sourceforge.net/projects/launch4j/
+
+ ❮ onyr ★  kenzae❯ ❮ launch4j❯❯ ./launch4j 
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/home/onyr/Downloads/launch4j/lib/xstream.jar) to field java.util.Properties.defaults
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Exception in thread "main" java.lang.NoClassDefFoundError: com/sun/java/swing/plaf/windows/WindowsLookAndFeel
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:821)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:719)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:642)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:600)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at net.sf.launch4j.Main.main(Main.java:59)
+Caused by: java.lang.ClassNotFoundException: com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 10 more
+ ❮ onyr ★  kenzae❯ ❮ launch4j❯❯ cd /usr/share/app
+appdata/              app-install/          applications/         apps/
+app-info/             application-registry/ apport/               
+ ❮ onyr ★  kenzae❯ ❮ launch4j❯❯ cd /usr/share/applications/
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ ls
+apport-gtk.desktop                    krita_psd.desktop
+apturl.desktop                        krita_qimageio.desktop
+[...]
+krita_png.desktop                     Zoom.desktop
+krita_ppm.desktop
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ gedit aseprite.desktop 
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ sudo touch launch4j.desktop
+[sudo] password for onyr: 
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ sudo gedit launch4j.desktop 
+
+** (gedit:5471): WARNING **: 00:07:35.218: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:5471): WARNING **: 00:07:35.218: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:5471): WARNING **: 00:08:02.733: Set document metadata failed: Setting attribute metadata::gedit-position not supported
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ sudo nano launch4j.desktop 
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ launch4j
+launch4j: command not found
+ ❮ onyr ★  kenzae❯ ❮ applications❯❯ cd /home/onyr/Downloads/
+ ❮ onyr ★  kenzae❯ ❮ Downloads❯❯ sudo tar xf launch4j-3.12-linux.tgz -C /opt

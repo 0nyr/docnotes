@@ -1,0 +1,1 @@
+#résoudre error connection shadow :  ❮ onyr ★  kenzae❯ ❮ ~❯❯ sudo apt install gconf2 libgles2-mesa libubsan0 libuv1 libva-glx2

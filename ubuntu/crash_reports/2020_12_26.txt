@@ -1,0 +1,114 @@
+13:01:00 anacron: Normal exit (0 jobs run)
+13:01:00 systemd: Started Run anacron jobs.
+12:59:56 whoopsie: [12:59:56] Unable to parse report (/var/crash/_usr_share_code_code.1000.crash): Report key must not be a duplicate.
+12:59:56 systemd: Started Process error reports when automatic reporting is enabled.
+12:59:56 whoopsie: [12:59:56] Parsing /var/crash/_usr_share_code_code.1000.crash.
+12:59:56 whoopsie: [12:59:56] Parsing /var/crash/_usr_share_code_code.1000.crash.
+12:59:56 whoopsie: [12:59:56] Unable to parse report (/var/crash/_usr_share_code_code.1000.crash): Report key must not be a duplicate.
+12:59:56 whoopsie: [12:59:56] Parsing /var/crash/_usr_share_code_code.1000.crash.
+12:59:56 whoopsie-upload: All reports processed
+12:59:56 whoopsie-upload: All reports processed
+12:59:56 whoopsie-upload: /var/crash/_usr_bin_ibus-daemon.1000.crash already marked for upload, skipping
+12:59:56 whoopsie-upload: Marking /var/crash/_usr_share_code_code.1000.crash for whoopsie upload
+12:59:56 whoopsie-upload: Collecting info for /var/crash/_usr_share_code_code.1000.crash...
+12:59:56 whoopsie-upload: /var/crash/_usr_bin_nautilus.1000.crash already marked for upload, skipping
+12:59:46 systemd: Starting Process error reports when automatic reporting is enabled...
+12:59:46 kernel: GpuWatchdog[18371]: segfault at 0 ip 0000558ec00a4ad9 sp 00007fdf0d15f680 error 6 in code[558ebca74000+57ee000]
+12:59:46 kernel: show_signal_msg: 99 callbacks suppressed
+12:59:19 kernel: note: Xorg[5959] exited with preempt_count 1
+12:59:19 kernel: ---[ end trace cdd32992979d0848 ]---
+12:59:19 kernel: RIP: gen8_ppgtt_set_pde.isra.32+0x4c/0x70 [i915] RSP: ffffb448833678d8
+12:59:19 kernel: Code: 01 00 83 81 a0 21 00 00 01 48 2b 05 87 0d d7 dc 48 c1 f8 06 48 c1 e0 0c 48 8d 04 d0 48 8b 56 10 48 03 05 80 0d d7 dc 48 83 ca 03 <48> 89 10 83 a9 a0 21 00 00 01 65 ff 0d 53 a7 93 3f 74 02 5d c3 
+12:59:19 kernel: R13: 000000000000000d R14: ffffffffffffffff R15: 000055bad67c7590
+12:59:19 kernel: R10: 00007ffc07332480 R11: 0000000000000246 R12: 0000000040406469
+12:59:19 kernel: RBP: 00007ffc073324b0 R08: 0000000000000008 R09: 000055bad6935d50
+12:59:19 kernel: RDX: 00007ffc073324b0 RSI: 0000000040406469 RDI: 000000000000000d
+12:59:19 kernel: RAX: ffffffffffffffda RBX: 000055bad68f2c90 RCX: 00007f3345e55317
+12:59:19 kernel: RSP: 002b:00007ffc07332458 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+12:59:19 kernel: RIP: 0033:0x7f3345e55317
+12:59:19 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+12:59:19 kernel: Call Trace:
+12:59:19 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+12:59:19 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+12:59:19 kernel: CR2: 00007f3342c61000 CR3: 00000001e49c6002 CR4: 00000000003606e0
+12:59:19 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+12:59:19 kernel: FS:  00007f3348a52600(0000) GS:ffff9961cf440000(0000) knlGS:0000000000000000
+12:59:19 kernel: R13: 0000000000300000 R14: ffff9961637bc000 R15: ffff99619491c000
+12:59:19 kernel: R10: ffffb44883367488 R11: 0000000000000000 R12: 00000000000000a1
+12:59:19 kernel: RBP: ffffb448833678d8 R08: 0000000000000000 R09: 0000000000000000
+12:59:19 kernel: RDX: 000000014610c003 RSI: ffff995fca82d880 RDI: ffff99619491c000
+12:59:19 kernel: RAX: 6a9b5dc67c64f508 RBX: 0000fffe94300000 RCX: ffff99616e8d2640
+12:59:19 kernel: RSP: 0018:ffffb448833678d8 EFLAGS: 00010206
+12:59:19 kernel: RIP: 0010:gen8_ppgtt_set_pde.isra.32+0x4c/0x70 [i915]
+12:59:19 kernel: Hardware name: Hewlett-Packard HP EliteBook Folio 1040 G2/2270, BIOS M76 Ver. 01.16 04/18/2019
+12:59:19 kernel: CPU: 1 PID: 5959 Comm: Xorg Tainted: G        W  OE    4.15.0-128-lowlatency #131-Ubuntu
+12:59:19 kernel:  aesni_intel snd_hda_codec_generic btintel bluetooth arc4 aes_x86_64 crypto_simd glue_helper snd_hda_intel cryptd snd_hda_codec snd_hda_core ecdh_generic intel_cstate snd_hwdep intel_rapl_perf snd_pcm iwlmvm mac80211 snd_seq_midi snd_seq_midi_event input_leds joydev iwlwifi snd_rawmidi serio_raw i915 rtsx_pci_ms snd_seq cfg80211 memstick snd_seq_device drm_kms_helper snd_timer drm i2c_algo_bit snd wmi fb_sys_fops mac_hid syscopyarea soundcore sysfillrect sysimgblt tpm_infineon video mei_me mei lpc_ich shpchp hp_wireless sch_fq_codel parport_pc ppdev lp parport ip_tables x_tables autofs4 hid_generic usbhid hid rtsx_pci_sdmmc e1000e ahci ptp libahci rtsx_pci pps_core psmouse
+12:59:19 kernel: Modules linked in: snd_usb_audio snd_usbmidi_lib xpad(OE) ff_memless cmac wacom snd_seq_dummy snd_hrtimer xt_conntrack ipt_MASQUERADE nf_nat_masquerade_ipv4 nf_conntrack_netlink nfnetlink xfrm_user xfrm_algo xt_addrtype iptable_filter iptable_nat nf_conntrack_ipv4 nf_defrag_ipv4 nf_nat_ipv4 nf_nat nf_conntrack libcrc32c br_netfilter bridge stp llc pci_stub vboxpci(OE) vboxnetadp(OE) vboxnetflt(OE) vboxdrv(OE) ccm aufs overlay bnep snd_hda_codec_hdmi binfmt_misc hp_wmi wmi_bmof sparse_keymap intel_rapl x86_pkg_temp_thermal intel_powerclamp coretemp qcserial usb_wwan cdc_ether usbserial kvm_intel usbnet mii uvcvideo kvm videobuf2_vmalloc btusb irqbypass videobuf2_memops crct10dif_pclmul videobuf2_v4l2 crc32_pclmul btrtl videobuf2_core ghash_clmulni_intel videodev pcbc btbcm media snd_hda_codec_realtek
+12:59:19 kernel: general protection fault: 0000 [#1] PREEMPT SMP PTI
+12:55:01 cron: pam_unix(cron:session): session closed for user root
+12:55:01 kernel: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+12:55:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:50:11 nautilus: gtk_revealer_set_reveal_child: assertion 'GTK_IS_REVEALER (revealer)' failed
+12:49:31 evince: /home/onyr/.local/share/applications/defaults.list contains a [Added Associations] group, but it is not permitted here.  Only the non-desktop-specific mimeapps.list file may add or remove associations.
+12:49:31 systemd: Started Evince document viewer.
+12:49:31 dbus-daemon: [session uid=1000 pid=5978] Successfully activated service 'org.gnome.evince.Daemon'
+12:49:31 systemd: Starting Evince document viewer...
+12:49:31 dbus-daemon: [session uid=1000 pid=5978] Activating via systemd: service name='org.gnome.evince.Daemon' unit='evince.service' requested by ':1.3923' (uid=1000 pid=31944 comm="evince /home/onyr/Downloads/questionnaire dents.pd" label="/usr/bin/evince (enforce)")
+12:49:27 tracker-miner-f: Parent 'file:///home/onyr/Downloads' not indexed yet
+12:49:25 systemd: Started Hostname Service.
+12:49:25 dbus-daemon: [system] Successfully activated service 'org.freedesktop.hostname1'
+12:49:25 systemd: Starting Hostname Service...
+12:49:25 dbus-daemon: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.470' (uid=1000 pid=30391 comm="/usr/lib/thunderbird/thunderbird " label="unconfined")
+12:45:01 cron: pam_unix(cron:session): session closed for user root
+12:45:01 kernel: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+12:45:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:39:32 systemd: Started Clean php session files.
+12:39:01 cron: pam_unix(cron:session): session closed for user root
+12:39:01 kernel: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+12:39:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:35:55 systemd: Started Hostname Service.
+12:35:55 dbus-daemon: [system] Successfully activated service 'org.freedesktop.hostname1'
+12:35:54 systemd: Starting Hostname Service...
+12:35:54 dbus-daemon: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.468' (uid=1000 pid=30391 comm="/usr/lib/thunderbird/thunderbird " label="unconfined")
+12:35:23 nautilus: gtk_revealer_set_reveal_child: assertion 'GTK_IS_REVEALER (revealer)' failed
+12:35:18 gnome-shell: g_object_run_dispose: assertion 'G_IS_OBJECT (object)' failed
+12:35:17 nautilus: Called "net usershare info" but it failed: Failed to execute child process “net” (No such file or directory)
+12:35:16 gdm-x-session: (EE) client bug: timer event4 debounce short: offset negative (-68ms)
+12:35:14 tracker-miner-f: Parent 'file:///home/onyr/Downloads' not indexed yet
+12:35:01 cron: pam_unix(cron:session): session closed for user root
+12:35:01 kernel: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+12:35:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:34:55 dbus-daemon: geany: Warning: ignoring null tag in /home/onyr/Documents/code/aelkyr_0.3/database/db_init_tables.js
+12:34:53 nautilus: gtk_revealer_set_reveal_child: assertion 'GTK_IS_REVEALER (revealer)' failed
+12:34:40 tracker-miner-f: Parent 'file:///home/onyr/Downloads' not indexed yet
+12:34:37 thunderbird: JavaScript error: resource:///modules/activity/autosync.jsm, line 251: uncaught exception: 2147746065
+12:34:36 systemd: Started Hostname Service.
+12:34:36 dbus-daemon: [system] Successfully activated service 'org.freedesktop.hostname1'
+12:34:35 systemd: Starting Hostname Service...
+12:34:35 dbus-daemon: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.466' (uid=1000 pid=30391 comm="/usr/lib/thunderbird/thunderbird " label="unconfined")
+12:33:36 tracker-miner-f: Could not execute sparql: UNIQUE constraint failed: nie:DataObject.nie:url
+12:33:18 gnome-shell: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5200084 (links.txt )
+12:33:11 rtkit-daemon: Supervising 4 threads of 4 processes of 1 users.
+12:33:02 nautilus: gtk_revealer_set_reveal_child: assertion 'GTK_IS_REVEALER (revealer)' failed
+12:32:04 systemd: Started Hostname Service.
+12:32:04 dbus-daemon: [system] Successfully activated service 'org.freedesktop.hostname1'
+12:32:04 systemd: Starting Hostname Service...
+12:32:04 dbus-daemon: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.124' (uid=1000 pid=9381 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+12:31:01 firefox: gtk_widget_get_window: assertion 'GTK_IS_WIDGET (widget)' failed
+12:27:34 rtkit-daemon: Supervising 4 threads of 4 processes of 1 users.
+12:26:38 thunderbird: JavaScript error: resource:///modules/activity/autosync.jsm, line 251: uncaught exception: 2147746065
+12:26:35 rtkit-daemon: Supervising 3 threads of 3 processes of 1 users.
+12:26:35 Discord: [Modules] No module updates available.
+12:26:35 systemd-resolve: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+12:26:10 thunderbird: JavaScript error: resource:///modules/activity/autosync.jsm, line 251: uncaught exception: 2147746065
+12:25:53 systemd-resolve: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+12:25:01 cron: pam_unix(cron:session): session closed for user root
+12:25:01 sh: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+12:25:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:17:45 wpa_supplicant: wlo1: WPA: Group rekeying completed with 08:3e:5d:7e:5f:53 [GTK=TKIP]
+12:17:01 cron: pam_unix(cron:session): session closed for user root
+12:16:31 rtkit-daemon: Supervising 3 threads of 3 processes of 1 users.
+12:15:01 cron: pam_unix(cron:session): session closed for user root
+12:15:01 kernel: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+12:15:01 cron: pam_unix(cron:session): session opened for user root by (uid=0)
+12:13:54 rtkit-daemon: Supervising 3 threads of 3 processes of 1 users.

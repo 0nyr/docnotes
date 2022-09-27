@@ -1,0 +1,1595 @@
+// commands and further reading
+https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html
+https://www.digitalocean.com/community/questions/mysql-installation-error-dpkg-error-processing-package-mysql-server-5-5-configure
+https://askubuntu.com/questions/1024263/mysql-server-installation-does-not-complete/1024310
+
+ʘ sudo dpkg --configure -a
+ʘ sudo apt-get install firefox
+ʘ sudo apt-get purge mysql*
+ʘ sudo apt-get autoremove
+ʘ sudo apt-get autoclean
+// manual cleaning (dangerous)
+ʘ sudo rm -rf /var/lib/mysql*
+ʘ sudo rm -rf /etc/mysql
+
+// properly install mysql
+https://tecadmin.net/install-mysql-on-ubuntu-18-04-bionic/
+
+// trying to purge mysql
+Welcome Onyr, pleased to see you again ;)
+ʘ firefox --version
+
+Command 'firefox' not found, but can be installed with:
+
+sudo snap install firefox  # version 70.0.1-1, or
+sudo apt  install firefox
+
+See 'snap info firefox' for additional versions.
+
+ʘ firefox --version
+
+Command 'firefox' not found, but can be installed with:
+
+sudo snap install firefox  # version 70.0.1-1, or
+sudo apt  install firefox
+
+See 'snap info firefox' for additional versions.
+
+ʘ sudo tar xjf ~/FirefoxSetup.tar.bz2 -C /opt/
+[sudo] password for onyr: 
+Sorry, try again.
+[sudo] password for onyr: 
+ʘ sudo mv /usr/lib/firefox/firefox /usr/lib/firefox/firefox_backup
+ʘ sudo ln -s /opt/firefox/firefox /usr/lib/firefox/firefox
+ʘ firefox
+
+Command 'firefox' not found, but can be installed with:
+
+sudo snap install firefox  # version 70.0.1-1, or
+sudo apt  install firefox
+
+See 'snap info firefox' for additional versions.
+
+ʘ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211FExecuting: /tmp/apt-key-gpghome.qqPfkrDrDo/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F
+gpg: key A6DCF7707EBC211F: 1 signature not checked due to a missing key
+gpg: key A6DCF7707EBC211F: public key "Launchpad PPA for Ubuntu Mozilla Security Team" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+ʘ sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
+Hit:1 http://fr.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://security.ubuntu.com/ubuntu bionic-security InRelease              
+Ign:3 http://dl.google.com/linux/chrome/deb stable InRelease                   
+Get:4 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic InRelease [15,4 kB]
+Hit:5 http://fr.archive.ubuntu.com/ubuntu bionic-updates InRelease             
+Ign:6 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 InRelease     
+Hit:7 http://dl.google.com/linux/chrome/deb stable Release                     
+Hit:8 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 Release       
+Hit:9 http://packages.microsoft.com/repos/vscode stable InRelease              
+Ign:10 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic InRelease       
+Ign:11 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic InRelease     
+Err:12 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release         
+  404  Not Found [IP: 91.189.95.83 80]
+Err:13 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release       
+  404  Not Found [IP: 91.189.95.83 80]
+Get:14 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main i386 Packages [34,5 kB]
+Hit:15 http://fr.archive.ubuntu.com/ubuntu bionic-backports InRelease          
+Get:16 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 Packages [34,4 kB]
+Get:19 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main Translation-en [12,3 kB]
+Reading package lists... Done                                          
+E: The repository 'http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+ʘ sudo apt-get update
+Hit:1 http://fr.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://fr.archive.ubuntu.com/ubuntu bionic-updates InRelease             
+Hit:3 http://fr.archive.ubuntu.com/ubuntu bionic-backports InRelease           
+Ign:4 http://dl.google.com/linux/chrome/deb stable InRelease                   
+Hit:5 http://packages.microsoft.com/repos/vscode stable InRelease              
+Hit:6 http://dl.google.com/linux/chrome/deb stable Release                     
+Hit:7 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic InRelease
+Ign:8 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 InRelease     
+Hit:9 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 Release       
+Ign:10 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic InRelease       
+Hit:11 http://security.ubuntu.com/ubuntu bionic-security InRelease             
+Ign:12 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic InRelease     
+Err:13 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release        
+  404  Not Found [IP: 91.189.95.83 80]
+Err:14 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release      
+  404  Not Found [IP: 91.189.95.83 80]
+Reading package lists... Done  
+E: The repository 'http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+ʘ sudo apt-get install firefox
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem. 
+ʘ sudo dpkg --configure -a
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Checking if update is needed.
+This installation of MySQL is already upgraded to 5.7.28, use --force if you still need to run mysql_upgrade
+^Cdpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess was interrupted
+Processing triggers for systemd (237-3ubuntu10.31) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+ureadahead will be reprofiled on next reboot
+Errors were encountered while processing:
+ mysql-server-5.7
+ʘ sudo mysql-server-5.7 upgrade
+sudo: mysql-server-5.7: command not found
+ʘ sudo upgrade mysql-server-5.7
+sudo: upgrade: command not found
+ʘ sudo apt-get upgrade dpkg
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+dpkg is already the newest version (1.19.0.5ubuntu2.3).
+Calculating upgrade... Done
+The following packages have been kept back:
+  linux-generic linux-headers-generic linux-image-generic
+The following packages will be upgraded:
+  amd64-microcode bind9-host chromium-codecs-ffmpeg-extra code dnsutils
+  firefox-locale-en google-chrome-stable intel-microcode libbind9-160
+  libdjvulibre-text libdjvulibre21 libdns-export1100 libdns1100 libirs160
+  libisc-export169 libisc169 libisccc160 libisccfg160 liblwres160
+  libnss-myhostname libnss-systemd libnss3 libpam-systemd libpython3.6
+  libpython3.6-dev libpython3.6-minimal libpython3.6-stdlib libqt5concurrent5
+  libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5opengl5
+  libqt5printsupport5 libqt5sql5 libqt5sql5-sqlite libqt5test5 libqt5widgets5
+  libqt5xml5 libruby2.5 libsqlite3-0 libsystemd0 libudev1 libvpx5
+  linux-libc-dev python3-distupgrade python3.6 python3.6-minimal
+  qt5-gtk-platformtheme ruby2.5 snapd systemd systemd-sysv thunderbird
+  thunderbird-gnome-support thunderbird-locale-en thunderbird-locale-en-us
+  ubuntu-drivers-common ubuntu-release-upgrader-core
+  ubuntu-release-upgrader-gtk udev virtualbox virtualbox-dkms virtualbox-qt
+64 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+1 not fully installed or removed.
+Need to get 281 MB of archives.
+After this operation, 16,3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsystemd0 amd64 237-3ubuntu10.33 [205 kB]
+Get:2 http://dl.google.com/linux/chrome/deb stable/main amd64 google-chrome-stable amd64 78.0.3904.108-1 [63,0 MB]
+Get:3 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 firefox-locale-en amd64 71.0+build2-0ubuntu0.18.04.1 [707 kB]
+Get:4 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnss-myhostname amd64 237-3ubuntu10.33 [34,9 kB]
+Get:5 http://packages.microsoft.com/repos/vscode stable/main amd64 code amd64 1.40.2-1574694120 [56,6 MB]
+Get:6 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnss-systemd amd64 237-3ubuntu10.33 [106 kB]
+Get:7 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpam-systemd amd64 237-3ubuntu10.33 [108 kB]
+Get:8 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd amd64 237-3ubuntu10.33 [2 905 kB]
+Get:9 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 thunderbird-locale-en amd64 1:68.2.2+build1-0ubuntu0.18.04.1 [498 kB]
+Get:10 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 udev amd64 237-3ubuntu10.33 [1 102 kB]
+Get:11 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libudev1 amd64 237-3ubuntu10.33 [54,6 kB]
+Get:12 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd-sysv amd64 237-3ubuntu10.33 [12,5 kB]
+Get:13 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-dev amd64 3.6.9-1~18.04 [44,8 MB]
+Get:14 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 thunderbird amd64 1:68.2.2+build1-0ubuntu0.18.04.1 [43,1 MB]
+Get:15 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 thunderbird-gnome-support amd64 1:68.2.2+build1-0ubuntu0.18.04.1 [8 636 B]
+Get:16 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 thunderbird-locale-en-us all 1:68.2.2+build1-0ubuntu0.18.04.1 [10,3 kB]
+Get:17 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6 amd64 3.6.9-1~18.04 [1 414 kB]
+Get:18 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6 amd64 3.6.9-1~18.04 [203 kB]
+Get:19 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-stdlib amd64 3.6.9-1~18.04 [1 709 kB]
+Get:20 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-minimal amd64 3.6.9-1~18.04 [1 610 kB]
+Get:21 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-minimal amd64 3.6.9-1~18.04 [533 kB]
+Get:22 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsqlite3-0 amd64 3.22.0-1ubuntu0.2 [498 kB]
+Get:23 http://fr.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 chromium-codecs-ffmpeg-extra amd64 78.0.3904.108-0ubuntu0.18.04.1 [1 078 kB]
+Get:24 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnss3 amd64 2:3.35-2ubuntu2.5 [1 136 kB]
+Get:25 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ubuntu-drivers-common amd64 1:0.5.2.4 [43,4 kB]
+Get:26 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libisc-export169 amd64 1:9.11.3+dfsg-1ubuntu1.11 [163 kB]
+Get:27 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdns-export1100 amd64 1:9.11.3+dfsg-1ubuntu1.11 [749 kB]
+Get:28 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libirs160 amd64 1:9.11.3+dfsg-1ubuntu1.11 [19,1 kB]
+Get:29 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 dnsutils amd64 1:9.11.3+dfsg-1ubuntu1.11 [145 kB]
+Get:30 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 bind9-host amd64 1:9.11.3+dfsg-1ubuntu1.11 [53,6 kB]
+Get:31 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libbind9-160 amd64 1:9.11.3+dfsg-1ubuntu1.11 [27,6 kB]
+Get:32 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libisccfg160 amd64 1:9.11.3+dfsg-1ubuntu1.11 [48,5 kB]
+Get:33 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libisccc160 amd64 1:9.11.3+dfsg-1ubuntu1.11 [17,9 kB]
+Get:34 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdns1100 amd64 1:9.11.3+dfsg-1ubuntu1.11 [966 kB]
+Get:35 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libisc169 amd64 1:9.11.3+dfsg-1ubuntu1.11 [237 kB]
+Get:36 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 liblwres160 amd64 1:9.11.3+dfsg-1ubuntu1.11 [34,5 kB]
+Get:37 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ubuntu-release-upgrader-gtk all 1:18.04.36 [9 376 B]
+Get:38 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ubuntu-release-upgrader-core all 1:18.04.36 [25,4 kB]
+Get:39 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distupgrade all 1:18.04.36 [107 kB]
+Get:40 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdjvulibre-text all 3.5.27.1-8ubuntu0.1 [49,3 kB]
+Get:41 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdjvulibre21 amd64 3.5.27.1-8ubuntu0.1 [560 kB]
+Get:42 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5core5a amd64 5.9.5+dfsg-0ubuntu2.4 [2 036 kB]
+Get:43 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5concurrent5 amd64 5.9.5+dfsg-0ubuntu2.4 [29,8 kB]
+Get:44 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5dbus5 amd64 5.9.5+dfsg-0ubuntu2.4 [196 kB]
+Get:45 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 qt5-gtk-platformtheme amd64 5.9.5+dfsg-0ubuntu2.4 [117 kB]
+Get:46 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5network5 amd64 5.9.5+dfsg-0ubuntu2.4 [634 kB]
+Get:47 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5gui5 amd64 5.9.5+dfsg-0ubuntu2.4 [2 569 kB]
+Get:48 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5widgets5 amd64 5.9.5+dfsg-0ubuntu2.4 [2 205 kB]
+Get:49 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5opengl5 amd64 5.9.5+dfsg-0ubuntu2.4 [132 kB]
+Get:50 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5printsupport5 amd64 5.9.5+dfsg-0ubuntu2.4 [178 kB]
+Get:51 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5sql5 amd64 5.9.5+dfsg-0ubuntu2.4 [115 kB]
+Get:52 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5sql5-sqlite amd64 5.9.5+dfsg-0ubuntu2.4 [40,2 kB]
+Get:53 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5test5 amd64 5.9.5+dfsg-0ubuntu2.4 [98,2 kB]
+Get:54 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libqt5xml5 amd64 5.9.5+dfsg-0ubuntu2.4 [99,5 kB]
+Get:55 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libruby2.5 amd64 2.5.1-1ubuntu1.6 [3 069 kB]
+Get:56 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libvpx5 amd64 1.7.0-3ubuntu0.18.04.1 [796 kB]
+Get:57 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-72.81 [1 000 kB]
+Get:58 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ruby2.5 amd64 2.5.1-1ubuntu1.6 [48,6 kB]
+Get:59 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 snapd amd64 2.42.1+18.04 [13,7 MB]
+Get:60 http://fr.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 virtualbox-qt amd64 5.2.34-dfsg-0~ubuntu18.04.1 [8 600 kB]
+Get:61 http://fr.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 virtualbox-dkms all 5.2.34-dfsg-0~ubuntu18.04.1 [663 kB]
+Get:62 http://fr.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 virtualbox amd64 5.2.34-dfsg-0~ubuntu18.04.1 [17,3 MB]
+Get:63 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 amd64-microcode amd64 3.20191021.1+really3.20181128.1~ubuntu0.18.04.1 [31,6 kB]
+Get:64 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 intel-microcode amd64 3.20191115.1ubuntu0.18.04.1 [2 409 kB]
+Fetched 281 MB in 8s (35,1 MB/s)                                               
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+(Reading database ... 230100 files and directories currently installed.)
+Preparing to unpack .../libsystemd0_237-3ubuntu10.33_amd64.deb ...
+Unpacking libsystemd0:amd64 (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Setting up libsystemd0:amd64 (237-3ubuntu10.33) ...
+(Reading database ... 230100 files and directories currently installed.)
+Preparing to unpack .../0-libnss-myhostname_237-3ubuntu10.33_amd64.deb ...
+Unpacking libnss-myhostname:amd64 (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../1-libnss-systemd_237-3ubuntu10.33_amd64.deb ...
+Unpacking libnss-systemd:amd64 (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../2-libpam-systemd_237-3ubuntu10.33_amd64.deb ...
+Unpacking libpam-systemd:amd64 (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../3-systemd_237-3ubuntu10.33_amd64.deb ...
+Unpacking systemd (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../4-udev_237-3ubuntu10.33_amd64.deb ...
+Unpacking udev (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../5-libudev1_237-3ubuntu10.33_amd64.deb ...
+Unpacking libudev1:amd64 (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Setting up libudev1:amd64 (237-3ubuntu10.33) ...
+Setting up systemd (237-3ubuntu10.33) ...
+Installing new version of config file /etc/dhcp/dhclient-enter-hooks.d/resolved ...
+(Reading database ... 230100 files and directories currently installed.)
+Preparing to unpack .../00-systemd-sysv_237-3ubuntu10.33_amd64.deb ...
+Unpacking systemd-sysv (237-3ubuntu10.33) over (237-3ubuntu10.31) ...
+Preparing to unpack .../01-libpython3.6-dev_3.6.9-1~18.04_amd64.deb ...
+Unpacking libpython3.6-dev:amd64 (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../02-libpython3.6_3.6.9-1~18.04_amd64.deb ...
+Unpacking libpython3.6:amd64 (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../03-python3.6_3.6.9-1~18.04_amd64.deb ...
+Unpacking python3.6 (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../04-libpython3.6-stdlib_3.6.9-1~18.04_amd64.deb ...
+Unpacking libpython3.6-stdlib:amd64 (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../05-python3.6-minimal_3.6.9-1~18.04_amd64.deb ...
+Unpacking python3.6-minimal (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../06-libpython3.6-minimal_3.6.9-1~18.04_amd64.deb ...
+Unpacking libpython3.6-minimal:amd64 (3.6.9-1~18.04) over (3.6.8-1~18.04.3) ...
+Preparing to unpack .../07-libsqlite3-0_3.22.0-1ubuntu0.2_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.22.0-1ubuntu0.2) over (3.22.0-1ubuntu0.1) ...
+Preparing to unpack .../08-chromium-codecs-ffmpeg-extra_78.0.3904.108-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking chromium-codecs-ffmpeg-extra (78.0.3904.108-0ubuntu0.18.04.1) over (78.0.3904.97-0ubuntu0.18.04.1) ...
+Preparing to unpack .../09-libnss3_2%3a3.35-2ubuntu2.5_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.35-2ubuntu2.5) over (2:3.35-2ubuntu2.3) ...
+Preparing to unpack .../10-google-chrome-stable_78.0.3904.108-1_amd64.deb ...
+Unpacking google-chrome-stable (78.0.3904.108-1) over (78.0.3904.97-1) ...
+Preparing to unpack .../11-ubuntu-drivers-common_1%3a0.5.2.4_amd64.deb ...
+Unpacking ubuntu-drivers-common (1:0.5.2.4) over (1:0.5.2.3) ...
+Preparing to unpack .../12-libisc-export169_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libisc-export169:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../13-libdns-export1100_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libdns-export1100 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../14-libirs160_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libirs160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../15-dnsutils_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking dnsutils (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../16-bind9-host_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking bind9-host (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../17-libbind9-160_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libbind9-160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../18-libisccfg160_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libisccfg160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../19-libisccc160_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libisccc160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../20-libdns1100_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libdns1100:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../21-libisc169_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking libisc169:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../22-liblwres160_1%3a9.11.3+dfsg-1ubuntu1.11_amd64.deb ...
+Unpacking liblwres160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) over (1:9.11.3+dfsg-1ubuntu1.10) ...
+Preparing to unpack .../23-ubuntu-release-upgrader-gtk_1%3a18.04.36_all.deb ...
+Unpacking ubuntu-release-upgrader-gtk (1:18.04.36) over (1:18.04.34) ...
+Preparing to unpack .../24-ubuntu-release-upgrader-core_1%3a18.04.36_all.deb ...
+Unpacking ubuntu-release-upgrader-core (1:18.04.36) over (1:18.04.34) ...
+Preparing to unpack .../25-python3-distupgrade_1%3a18.04.36_all.deb ...
+Unpacking python3-distupgrade (1:18.04.36) over (1:18.04.34) ...
+Preparing to unpack .../26-code_1.40.2-1574694120_amd64.deb ...
+Unpacking code (1.40.2-1574694120) over (1.40.1-1573664190) ...
+Preparing to unpack .../27-firefox-locale-en_71.0+build2-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking firefox-locale-en (71.0+build2-0ubuntu0.18.04.1) over (70.0.1+build1-0ubuntu0.18.04.1) ...
+Preparing to unpack .../28-libdjvulibre-text_3.5.27.1-8ubuntu0.1_all.deb ...
+Unpacking libdjvulibre-text (3.5.27.1-8ubuntu0.1) over (3.5.27.1-8) ...
+Preparing to unpack .../29-libdjvulibre21_3.5.27.1-8ubuntu0.1_amd64.deb ...
+Unpacking libdjvulibre21:amd64 (3.5.27.1-8ubuntu0.1) over (3.5.27.1-8) ...
+Preparing to unpack .../30-libqt5core5a_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5core5a:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../31-libqt5concurrent5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5concurrent5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../32-libqt5dbus5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5dbus5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../33-qt5-gtk-platformtheme_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking qt5-gtk-platformtheme:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../34-libqt5network5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5network5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../35-libqt5gui5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5gui5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../36-libqt5widgets5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5widgets5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../37-libqt5opengl5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5opengl5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../38-libqt5printsupport5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5printsupport5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../39-libqt5sql5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5sql5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../40-libqt5sql5-sqlite_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5sql5-sqlite:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../41-libqt5test5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5test5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../42-libqt5xml5_5.9.5+dfsg-0ubuntu2.4_amd64.deb ...
+Unpacking libqt5xml5:amd64 (5.9.5+dfsg-0ubuntu2.4) over (5.9.5+dfsg-0ubuntu2.3) ...
+Preparing to unpack .../43-libruby2.5_2.5.1-1ubuntu1.6_amd64.deb ...
+Unpacking libruby2.5:amd64 (2.5.1-1ubuntu1.6) over (2.5.1-1ubuntu1.5) ...
+Preparing to unpack .../44-libvpx5_1.7.0-3ubuntu0.18.04.1_amd64.deb ...
+Unpacking libvpx5:amd64 (1.7.0-3ubuntu0.18.04.1) over (1.7.0-3) ...
+Preparing to unpack .../45-linux-libc-dev_4.15.0-72.81_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.15.0-72.81) over (4.15.0-70.79) ...
+Preparing to unpack .../46-ruby2.5_2.5.1-1ubuntu1.6_amd64.deb ...
+Unpacking ruby2.5 (2.5.1-1ubuntu1.6) over (2.5.1-1ubuntu1.5) ...
+Preparing to unpack .../47-snapd_2.42.1+18.04_amd64.deb ...
+Unpacking snapd (2.42.1+18.04) over (2.40+18.04) ...
+Preparing to unpack .../48-thunderbird-locale-en_1%3a68.2.2+build1-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking thunderbird-locale-en (1:68.2.2+build1-0ubuntu0.18.04.1) over (1:60.9.0+build1-0ubuntu0.18.04.1) ...
+Preparing to unpack .../49-thunderbird_1%3a68.2.2+build1-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking thunderbird (1:68.2.2+build1-0ubuntu0.18.04.1) over (1:60.9.0+build1-0ubuntu0.18.04.1) ...
+Preparing to unpack .../50-thunderbird-gnome-support_1%3a68.2.2+build1-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking thunderbird-gnome-support (1:68.2.2+build1-0ubuntu0.18.04.1) over (1:60.9.0+build1-0ubuntu0.18.04.1) ...
+Preparing to unpack .../51-thunderbird-locale-en-us_1%3a68.2.2+build1-0ubuntu0.18.04.1_all.deb ...
+Unpacking thunderbird-locale-en-us (1:68.2.2+build1-0ubuntu0.18.04.1) over (1:60.9.0+build1-0ubuntu0.18.04.1) ...
+Preparing to unpack .../52-virtualbox-qt_5.2.34-dfsg-0~ubuntu18.04.1_amd64.deb ...
+Unpacking virtualbox-qt (5.2.34-dfsg-0~ubuntu18.04.1) over (5.2.32-dfsg-0~ubuntu18.04.1) ...
+Preparing to unpack .../53-virtualbox-dkms_5.2.34-dfsg-0~ubuntu18.04.1_all.deb ...
+
+-------- Uninstall Beginning --------
+Module:  virtualbox
+Version: 5.2.32
+Kernel:  4.15.0-66-generic (x86_64)
+-------------------------------------
+
+Status: Before uninstall, this module version was ACTIVE on this kernel.
+
+vboxdrv.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-66-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxnetadp.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-66-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxnetflt.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-66-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxpci.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-66-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+depmod...
+
+DKMS: uninstall completed.
+
+-------- Uninstall Beginning --------
+Module:  virtualbox
+Version: 5.2.32
+Kernel:  4.15.0-70-generic (x86_64)
+-------------------------------------
+
+Status: Before uninstall, this module version was ACTIVE on this kernel.
+
+vboxdrv.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-70-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxnetadp.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-70-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxnetflt.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-70-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxpci.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/4.15.0-70-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+depmod...
+
+DKMS: uninstall completed.
+
+------------------------------
+Deleting module version: 5.2.32
+completely from the DKMS tree.
+------------------------------
+Done.
+Unpacking virtualbox-dkms (5.2.34-dfsg-0~ubuntu18.04.1) over (5.2.32-dfsg-0~ubuntu18.04.1) ...
+Preparing to unpack .../54-virtualbox_5.2.34-dfsg-0~ubuntu18.04.1_amd64.deb ...
+Unpacking virtualbox (5.2.34-dfsg-0~ubuntu18.04.1) over (5.2.32-dfsg-0~ubuntu18.04.1) ...
+Preparing to unpack .../55-amd64-microcode_3.20191021.1+really3.20181128.1~ubuntu0.18.04.1_amd64.deb ...
+Unpacking amd64-microcode (3.20191021.1+really3.20181128.1~ubuntu0.18.04.1) over (3.20180524.1~ubuntu0.18.04.2) ...
+Preparing to unpack .../56-intel-microcode_3.20191115.1ubuntu0.18.04.1_amd64.deb ...
+Unpacking intel-microcode (3.20191115.1ubuntu0.18.04.1) over (3.20191112-0ubuntu0.18.04.2) ...
+Setting up libqt5core5a:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libisc169:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up intel-microcode (3.20191115.1ubuntu0.18.04.1) ...
+update-initramfs: deferring update (trigger activated)
+intel-microcode: microcode will be updated at next boot
+Setting up libnss-systemd:amd64 (237-3ubuntu10.33) ...
+Setting up libruby2.5:amd64 (2.5.1-1ubuntu1.6) ...
+Setting up libisccc160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up libqt5dbus5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up firefox-locale-en (71.0+build2-0ubuntu0.18.04.1) ...
+Setting up libqt5network5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libnss-myhostname:amd64 (237-3ubuntu10.33) ...
+Setting up libdjvulibre-text (3.5.27.1-8ubuntu0.1) ...
+Setting up libisc-export169:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up systemd-sysv (237-3ubuntu10.33) ...
+Setting up virtualbox-dkms (5.2.34-dfsg-0~ubuntu18.04.1) ...
+Loading new virtualbox-5.2.34 DKMS files...
+Building for 4.15.0-70-generic
+Building initial module for 4.15.0-70-generic
+Done.
+
+vboxdrv:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.15.0-70-generic/updates/dkms/
+
+vboxnetadp.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.15.0-70-generic/updates/dkms/
+
+vboxnetflt.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.15.0-70-generic/updates/dkms/
+
+vboxpci.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.15.0-70-generic/updates/dkms/
+
+depmod...
+
+DKMS: install completed.
+Setting up linux-libc-dev:amd64 (4.15.0-72.81) ...
+Setting up libqt5test5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up thunderbird (1:68.2.2+build1-0ubuntu0.18.04.1) ...
+Setting up libpython3.6-minimal:amd64 (3.6.9-1~18.04) ...
+Setting up libqt5xml5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up udev (237-3ubuntu10.33) ...
+update-initramfs: deferring update (trigger activated)
+Setting up libqt5gui5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up chromium-codecs-ffmpeg-extra (78.0.3904.108-0ubuntu0.18.04.1) ...
+Setting up thunderbird-gnome-support (1:68.2.2+build1-0ubuntu0.18.04.1) ...
+Setting up libqt5sql5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libdns-export1100 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up libsqlite3-0:amd64 (3.22.0-1ubuntu0.2) ...
+Setting up libvpx5:amd64 (1.7.0-3ubuntu0.18.04.1) ...
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server. Please restart MySQL and run mysql_upgrade to ensure the database is ready for use.
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server.
+Job for mysql.service failed because the control process exited with error code.
+See "systemctl status mysql.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript mysql, action "start" failed.
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2019-12-03 21:01:35 CET; 5ms ago
+  Process: 20836 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=1/FAILURE)
+  Process: 20827 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 1109 (code=exited, status=0/SUCCESS)
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 1
+Setting up qt5-gtk-platformtheme:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libdns1100:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up amd64-microcode (3.20191021.1+really3.20181128.1~ubuntu0.18.04.1) ...
+update-initramfs: deferring update (trigger activated)
+amd64-microcode: microcode will be updated at next boot
+Setting up liblwres160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up libqt5concurrent5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up python3-distupgrade (1:18.04.36) ...
+Setting up libpython3.6-stdlib:amd64 (3.6.9-1~18.04) ...
+Setting up ruby2.5 (2.5.1-1ubuntu1.6) ...
+Setting up libpam-systemd:amd64 (237-3ubuntu10.33) ...
+Setting up libqt5widgets5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libdjvulibre21:amd64 (3.5.27.1-8ubuntu0.1) ...
+Setting up python3.6-minimal (3.6.9-1~18.04) ...
+Setting up libnss3:amd64 (2:3.35-2ubuntu2.5) ...
+Setting up ubuntu-release-upgrader-core (1:18.04.36) ...
+Setting up thunderbird-locale-en (1:68.2.2+build1-0ubuntu0.18.04.1) ...
+Setting up libqt5printsupport5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libqt5opengl5:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up thunderbird-locale-en-us (1:68.2.2+build1-0ubuntu0.18.04.1) ...
+Setting up libqt5sql5-sqlite:amd64 (5.9.5+dfsg-0ubuntu2.4) ...
+Setting up libisccfg160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up ubuntu-drivers-common (1:0.5.2.4) ...
+Setting up snapd (2.42.1+18.04) ...
+Installing new version of config file /etc/apparmor.d/usr.lib.snapd.snap-confine.real ...
+Installing new version of config file /etc/xdg/autostart/snap-userd-autostart.desktop ...
+snapd.failure.service is a disabled or a static unit, not starting it.
+snapd.snap-repair.service is a disabled or a static unit, not starting it.
+Setting up code (1.40.2-1574694120) ...
+Setting up google-chrome-stable (78.0.3904.108-1) ...
+Setting up libpython3.6:amd64 (3.6.9-1~18.04) ...
+Setting up ubuntu-release-upgrader-gtk (1:18.04.36) ...
+Setting up python3.6 (3.6.9-1~18.04) ...
+Setting up libirs160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up libbind9-160:amd64 (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up libpython3.6-dev:amd64 (3.6.9-1~18.04) ...
+Setting up virtualbox (5.2.34-dfsg-0~ubuntu18.04.1) ...
+vboxweb.service is a disabled or a static unit not running, not starting it.
+Setting up bind9-host (1:9.11.3+dfsg-1ubuntu1.11) ...
+Setting up virtualbox-qt (5.2.34-dfsg-0~ubuntu18.04.1) ...
+Setting up dnsutils (1:9.11.3+dfsg-1ubuntu1.11) ...
+Processing triggers for systemd (237-3ubuntu10.33) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for shared-mime-info (1.9-2) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Processing triggers for dbus (1.12.2-1ubuntu1.1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for initramfs-tools (0.130ubuntu3.9) ...
+update-initramfs: Generating /boot/initrd.img-4.15.0-70-generic
+Errors were encountered while processing:
+ mysql-server-5.7
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ʘ ERROR: Database files are locked. Daemon already running?
+ERROR:: command not found
+ʘ sudo apt-get install firefox
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  fonts-lyx
+The following NEW packages will be installed:
+  firefox
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+1 not fully installed or removed.
+Need to get 50,3 MB of archives.
+After this operation, 198 MB of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic/main amd64 firefox amd64 71.0+build2-0ubuntu0.18.04.1 [50,3 MB]
+Fetched 50,3 MB in 2s (29,1 MB/s)   
+Selecting previously unselected package firefox.
+(Reading database ... 230103 files and directories currently installed.)
+Preparing to unpack .../firefox_71.0+build2-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking firefox (71.0+build2-0ubuntu0.18.04.1) ...
+Setting up firefox (71.0+build2-0ubuntu0.18.04.1) ...
+Please restart all running instances of firefox, or you will experience problems.
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server. Please restart MySQL and run mysql_upgrade to ensure the database is ready for use.
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server.
+Job for mysql.service failed because the control process exited with error code.
+See "systemctl status mysql.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript mysql, action "start" failed.
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2019-12-03 21:04:59 CET; 10ms ago
+  Process: 28686 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=1/FAILURE)
+  Process: 28677 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 1109 (code=exited, status=0/SUCCESS)
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 1
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Errors were encountered while processing:
+ mysql-server-5.7
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ʘ sudo apt-get install firefox
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+firefox is already the newest version (71.0+build2-0ubuntu0.18.04.1).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+1 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server. Please restart MySQL and run mysql_upgrade to ensure the database is ready for use.
+/var/lib/mysql/ibdata1: 13255
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+Welcome Onyr, pleased to see you again ;)
+ʘ sudo dpkg --configure -a
+[sudo] password for onyr: 
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Checking if update is needed.
+This installation of MySQL is already upgraded to 5.7.28, use --force if you still need to run mysql_upgrade
+^Cdpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess was interrupted
+Errors were encountered while processing:
+ mysql-server-5.7
+ʘ sudo dpkg --configure -a
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+/var/lib/mysql/ibdata1:  2587
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server. Please restart MySQL and run mysql_upgrade to ensure the database is ready for use.
+/var/lib/mysql/ibdata1:  2587
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server.
+Job for mysql.service failed because the control process exited with error code.
+See "systemctl status mysql.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript mysql, action "start" failed.
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2019-12-03 21:43:19 CET; 10ms ago
+  Process: 2893 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=1/FAILURE)
+  Process: 2882 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 1094 (code=exited, status=0/SUCCESS)
+
+déc. 03 21:43:19 kenzae systemd[1]: mysql.service: Service hold-off time over, scheduling restart.
+déc. 03 21:43:19 kenzae systemd[1]: mysql.service: Scheduled restart job, restart counter is at 1.
+déc. 03 21:43:19 kenzae systemd[1]: Stopped MySQL Community Server.
+déc. 03 21:43:19 kenzae systemd[1]: Starting MySQL Community Server...
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ mysql-server-5.7
+ʘ sudo dpkg --configure -a
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+/var/lib/mysql/ibdata1:  2587
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server. Please restart MySQL and run mysql_upgrade to ensure the database is ready for use.
+/var/lib/mysql/ibdata1:  2587
+ERROR: Database files are locked. Daemon already running?
+Warning: Unable to start the server.
+Job for mysql.service failed because the control process exited with error code.
+See "systemctl status mysql.service" and "journalctl -xe" for details.
+invoke-rc.d: initscript mysql, action "start" failed.
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2019-12-03 21:46:42 CET; 13ms ago
+  Process: 3599 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=1/FAILURE)
+  Process: 3590 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 1094 (code=exited, status=0/SUCCESS)
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ mysql-server-5.7
+
+
+
+
+
+
+
+
+
+
+
+
+
+//mysql installation error: dpkg: error processing package mysql-server-5.5 (--configure):
+July 15, 2015 97.4kviews MYSQL DIGITALOCEAN RUBY ON RAILS
+hdiario
+hdiario
+Hello,
+when I run
+
+sudo apt-get update
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+a password input screen comes up. Regardless I choose a password or not, I get following error.
+
+start: Job failed to start
+invoke-rc.d: initscript mysql, action "start" failed.
+dpkg: error processing package mysql-server-5.5 (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of mysql-server:
+ mysql-server depends on mysql-server-5.5; however:
+  Package mysql-server-5.5 is not configured yet.
+
+dpkg: error processing package mysql-server (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+                  Errors were encountered while processing:
+ mysql-server-5.5
+ mysql-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+I even tried
+
+sudo apt-get dist-upgrade
+but it only broke postgresql and I had to purge it.
+What is the problem and what should I do to install mysql?
+
+3 comments
+
+0
+tylerfoulkes10 January 30, 2017  
+I have purged mysql completely multiple times and I have tried what @CrypticDesigns suggested and I am still getting the below error when I run sudo apt-get install mysql-server.
+
+dpkg: dependency problems prevent configuration of mysql-server:
+ mysql-server depends on mysql-server-5.7; however:
+  Package mysql-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-server (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+                                                                                                          Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Processing triggers for systemd (229-4ubuntu16) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Errors were encountered while processing:
+ mysql-server-5.7
+ mysql-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+0
+spinner November 13, 2018  
+Thank you sir, you saved me
+
+
+0
+muhammadhafid49 November 25, 2018  
+This method was not successful in linux mint. Please ask for another suggestion
+
+Sign In to Comment
+14 Answers
+
+13
+JustSomeTech July 15, 2015
+I am not sure if it will work, but try this. First you need to uninstall anything that is related to mysql:
+
+sudo apt-get purge mysql*
+sudo apt-get autoremove
+sudo apt-get autoclean
+Then the important bit, this error could be caused because your distribution is not upgraded recently, or at least conflicts are not resolved properly. So next thing is to upgrade it like you did before but without removing first:
+
+sudo apt-get dist-upgrade
+Now after this is done, you can try to install mysql as normal again. Hope this will work, please give a report. If it doesnt work we’ll try another fix.
+
+
+0
+indrikx April 12, 2016
+Thanks, it worked for me.
+
+ 
+
+1
+gk10 May 30, 2016
+Thanks for the solution.
+It worked for me.
+
+ 
+
+0
+shilpamitra October 24, 2017
+Oh you saved me! Thanks! It worked like charm.
+
+ 
+
+1
+JustSomeTech October 24, 2017
+No Problem! Vote up my answer so people can see the answer.
+
+ 
+
+0
+shilpamitra October 25, 2017
+Already did that. Thanks again.
+
+ 
+
+0
+alhambon October 11, 2018
+FInally!! thanks sir! it worked for me
+
+ 
+
+6
+zasha April 16, 2019
+IMPORTANT NOTE
+
+AFTER PURGING AND REMOVING MYSQL. RESTART THE MACHINE.
+
+I REPEAT “RESTART THE MACHINE”
+
+RESTART IS THE FINAL SOLUTION. I have spent sleepless nights figuring why it’s not solving.
+
+
+2
+razak February 23, 2017
+I get the same error. . No luck with above mentioned solutions :-(
+
+dpkg: dependency problems prevent configuration of mysql-server:
+mysql-server depends on mysql-server-5.7; however:
+Package mysql-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-server (–configure):
+dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+Processing triggers for libc-bin (2.23-0ubuntu5) …
+Processing triggers for systemd (229-4ubuntu16) …
+Processing triggers for ureadahead (0.100.0-19) …
+Errors were encountered while processing:
+mysql-server-5.7
+mysql-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+1
+hdiario July 16, 2015
+Thank you CrypticDesigns. I went through purging, removing, and cleaning multiple times before and after dist-upgrade. It didn’t work for me. Any other suggestion/ solution will be appreciated..
+
+
+1
+mikecbobadilla July 26, 2015
+same problem here
+
+
+0
+jacklu November 4, 2015
+I had similar problem.
+Ubuntu 14.04 with preinstalled nginx + mysql 5.5. In July 2015 after one of security updates mysql doesn’t finish to install. I’ve tried shuting down mysql-server before updating without success in updating. Today I’ve tried to removing and installing again mysql-server but still the same error. Then I stopped and started mysql manually in other shell during updating in aptitude, and problem disapers (ie. on aptitude I have no error message “packages partially installed: mysql-server and mysql-server-5.5”)
+I hope this will help someone.
+
+
+0
+sophistry March 1, 2016
+Have the same problem as well and I also keep getting unable to set root password.
+
+
+0
+heinzschmidt June 6, 2016
+Ping! Same issue with my server
+
+
+0
+brijeshmkt August 30, 2016
+This worked for me :-)
+
+
+0
+subikar August 25, 2018
+Well I am having the same issue I have tried your
+
+sudo apt-get purge mysql*
+sudo apt-get autoremove
+sudo apt-get autoclean
+
+I am getting this error
+
+Reading package lists… Done
+Building dependency tree
+Reading state information… Done
+Note, selecting ‘mysqltcl’ for glob 'mysql’
+Note, selecting 'mysql-mmm-agent’ for glob 'mysql’
+Note, selecting 'mysql-workbench’ for glob 'mysql’
+Note, selecting 'mysql-client-5.5’ for glob 'mysql’
+Note, selecting 'mysql-client-5.6’ for glob 'mysql’
+Note, selecting 'mysql-client-5.7’ for glob 'mysql’
+Note, selecting 'mysql-mmm-tools’ for glob 'mysql’
+Note, selecting 'mysql-common-5.6’ for glob 'mysql’
+Note, selecting 'mysql-server-5.0’ for glob 'mysql’
+Note, selecting 'mysql-server-5.1’ for glob 'mysql’
+Note, selecting 'mysql-server-5.5’ for glob 'mysql’
+Note, selecting 'mysql-server-5.6’ for glob 'mysql’
+Note, selecting 'mysql-server-5.7’ for glob 'mysql’
+Note, selecting 'mysql-utilities’ for glob 'mysql’
+Note, selecting 'mysql-testsuite’ for glob 'mysql’
+Note, selecting 'mysql-mmm-common’ for glob 'mysql’
+Note, selecting 'mysql-server’ for glob 'mysql’
+Note, selecting 'mysql-client’ for glob 'mysql’
+Note, selecting 'mysql-sandbox’ for glob 'mysql’
+Note, selecting 'mysql-client-core-5.5’ for glob 'mysql’
+Note, selecting 'mysql-client-core-5.6’ for glob 'mysql’
+Note, selecting 'mysql-client-core-5.7’ for glob 'mysql’
+Note, selecting 'mysql-testsuite-5.5’ for glob 'mysql’
+Note, selecting 'mysql-testsuite-5.6’ for glob 'mysql’
+Note, selecting 'mysql-testsuite-5.7’ for glob 'mysql’
+Note, selecting 'mysql-common’ for glob 'mysql’
+Note, selecting 'mysql-mmm-monitor’ for glob 'mysql’
+Note, selecting 'mysqltuner’ for glob 'mysql’
+Note, selecting 'mysql-workbench-data’ for glob 'mysql’
+Note, selecting 'mysql-server-core-5.1’ for glob 'mysql’
+Note, selecting 'mysql-server-core-5.5’ for glob 'mysql’
+Note, selecting 'mysql-server-core-5.6’ for glob 'mysql’
+Note, selecting 'mysql-server-core-5.7’ for glob 'mysql’
+Note, selecting 'mysql-source-5.7’ for glob 'mysql’
+Package 'mysql-client-5.5’ is not installed, so not removed
+Package 'mysql-client-5.6’ is not installed, so not removed
+Package 'mysql-server-core-5.6’ is not installed, so not removed
+Package 'mysql-client-core-5.5’ is not installed, so not removed
+Package 'mysql-client-core-5.6’ is not installed, so not removed
+Note, selecting 'mysql-common’ instead of 'mysql-common-5.6’
+Package 'mysql-server-5.5’ is not installed, so not removed
+Package 'mysql-server-5.6’ is not installed, so not removed
+Package 'mysql-server-core-5.5’ is not installed, so not removed
+Package 'mysql-testsuite-5.5’ is not installed, so not removed
+Package 'mysql-testsuite-5.6’ is not installed, so not removed
+Package 'mysql-server-5.0’ is not installed, so not removed
+Package 'mysql-server-5.1’ is not installed, so not removed
+Package 'mysql-server-core-5.1’ is not installed, so not removed
+Package 'mysql-mmm-agent’ is not installed, so not removed
+Package 'mysql-mmm-common’ is not installed, so not removed
+Package 'mysql-mmm-monitor’ is not installed, so not removed
+Package 'mysql-mmm-tools’ is not installed, so not removed
+Package 'mysql-sandbox’ is not installed, so not removed
+Package 'mysql-utilities’ is not installed, so not removed
+Package 'mysql-workbench’ is not installed, so not removed
+Package 'mysql-workbench-data’ is not installed, so not removed
+Package 'mysqltcl’ is not installed, so not removed
+Package 'mysqltuner’ is not installed, so not removed
+Package 'mysql-source-5.7’ is not installed, so not removed
+Package 'mysql-testsuite’ is not installed, so not removed
+Package 'mysql-testsuite-5.7’ is not installed, so not removed
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+dbconfig-mysql : Depends: mysql-client but it is not going to be installed or
+mariadb-client but it is not going to be installed or
+virtual-mysql-client
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+
+
+0
+bramvdpluijmde192edf33df30 September 18, 2018
+Still having the same problem even after following @ForYourIT ’s answer. This is driving me insane.
+
+
+0
+neoroph November 15, 2018
+After purging/autoremoving/cleaning the mysql server I had to manually delete some directories since I had reconfigured some settings.
+
+Use only if you are sure that you don’t need old configuration files and the previous database entries anymore, since /var/lib/mysql-keyring contains passwords etc. and /var/lib/mysql contains the default database location!
+
+sudo rm -rf /etc/mysql
+
+and
+
+sudo rm -rf /var/lib/mysql*
+
+Now the configuration process started normally during reinstallation of the server.
+
+
+0
+harishdd April 17, 2019
+[deleted]
+
+0
+harishdd April 17, 2019
+After purging, removal and clean reboot the server and do a fresh installation again sudo apt-get install mysql-server.
+
+
+// solution 1 ?
+ʘ sudo apt-get remove mysql-server-5.7
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libevent-core-2.1-6 mysql-server-core-5.7
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  mysql-server mysql-server-5.7
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+1 not fully installed or removed.
+After this operation, 47,6 MB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 230201 files and directories currently installed.)
+Removing mysql-server (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+update-alternatives: warning: alternative /etc/mysql/my.cnf.fallback (part of link group my.cnf) doesn't exist; removing from list of alternatives
+update-alternatives: warning: alternative /etc/mysql/mysql.cnf (part of link group my.cnf) doesn't exist; removing from list of alternatives
+update-alternatives: warning: /etc/alternatives/my.cnf is dangling; it will be updated with best choice
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+ʘ sudo apt-get remove default-mysql-server
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package 'default-mysql-server' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  libevent-core-2.1-6 mysql-server-core-5.7
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ʘ sudo apt autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  libevent-core-2.1-6 mysql-server-core-5.7
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+After this operation, 45,3 MB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 230123 files and directories currently installed.)
+Removing libevent-core-2.1-6:amd64 (2.1.8-stable-4build1) ...
+Removing mysql-server-core-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+
+
+
+
+
+// attempt 4 DEC 2019
+Welcome Onyr, pleased to see you again ;)
+ʘ sudo apt-get update
+[sudo] password for onyr: 
+Hit:1 http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic InRelease
+Hit:2 http://fr.archive.ubuntu.com/ubuntu bionic InRelease                     
+Ign:3 http://dl.google.com/linux/chrome/deb stable InRelease                   
+Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88,7 kB]    
+Hit:5 http://fr.archive.ubuntu.com/ubuntu bionic-updates InRelease             
+Hit:6 http://dl.google.com/linux/chrome/deb stable Release                     
+Get:7 http://packages.microsoft.com/repos/vscode stable InRelease [3 958 B]    
+Hit:8 http://fr.archive.ubuntu.com/ubuntu bionic-backports InRelease           
+Ign:9 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic InRelease        
+Ign:10 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 InRelease    
+Ign:12 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic InRelease 
+Hit:13 https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 Release  
+Get:14 http://packages.microsoft.com/repos/vscode stable/main amd64 Packages [155 kB]
+Err:15 http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release         
+  404  Not Found [IP: 91.189.95.83 80]
+Get:17 http://security.ubuntu.com/ubuntu bionic-security/main amd64 DEP-11 Metadata [38,6 kB]
+Get:18 http://security.ubuntu.com/ubuntu bionic-security/main DEP-11 48x48 Icons [17,6 kB]
+Err:19 http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release       
+  404  Not Found [IP: 91.189.95.83 80]
+Get:20 http://security.ubuntu.com/ubuntu bionic-security/main DEP-11 64x64 Icons [41,5 kB]
+Get:21 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 DEP-11 Metadata [42,1 kB]
+Get:22 http://security.ubuntu.com/ubuntu bionic-security/universe DEP-11 48x48 Icons [16,4 kB]
+Get:23 http://security.ubuntu.com/ubuntu bionic-security/universe DEP-11 64x64 Icons [111 kB]
+Get:24 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 DEP-11 Metadata [2 464 B]
+Reading package lists... Done       
+E: The repository 'http://ppa.launchpad.net/mdeslaur/steamos/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://ppa.launchpad.net/ryochan7/antimicro/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+ʘ sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+mysql-server is already the newest version (5.7.28-0ubuntu0.18.04.4).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+update-alternatives: error: alternative path /etc/mysql/mysql.cnf doesn't exist
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 2
+dpkg: dependency problems prevent configuration of mysql-server:
+ mysql-server depends on mysql-server-5.7; however:
+  Package mysql-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-server (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+                          Errors were encountered while processing:
+ mysql-server-5.7
+ mysql-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ʘ sudo apt-get purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package mysql
+ʘ sudo apt-get autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+update-alternatives: error: alternative path /etc/mysql/mysql.cnf doesn't exist
+dpkg: error processing package mysql-server-5.7 (--configure):
+ installed mysql-server-5.7 package post-installation script subprocess returned error exit status 2
+dpkg: dependency problems prevent configuration of mysql-server:
+ mysql-server depends on mysql-server-5.7; however:
+  Package mysql-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-server (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+                          Errors were encountered while processing:
+ mysql-server-5.7
+ mysql-server
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ʘ sudo apt-get autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Please enable --log-error option or set appropriate redirections for standard output and/or standard error in daemon mode.
+Warning: Unable to start the server.
+Setting up mysql-server (5.7.28-0ubuntu0.18.04.4) ...
+W: APT had planned for dpkg to do more than it reported back (3 vs 7).
+   Affected packages: mysql-server-5.7:amd64
+ʘ sudo apt-get autoremove --log-error
+E: Command line option --log-error is not understood in combination with the other options
+ʘ sudo apt-get remove --purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package mysql
+ʘ sudo apt-get purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package mysql
+ʘ su
+Password: 
+^C
+su: Authentication failure
+ʘ 
+ʘ su
+Password: 
+su: Authentication failure
+ʘ sudo rm -rf /etc/mysql
+ʘ cd /etc
+ʘ l
+./                      hosts                 pm/
+../                     hosts.allow           pnm2ppa.conf
+acpi/                   hosts.deny            polkit-1/
+adduser.conf            hp/                   popularity-contest.conf
+alternatives/           icedtea-web/          ppp/
+anacrontab              ifplugd/              printcap@
+apache2/                ImageMagick-6/        profile
+apg.conf                init/                 profile.d/
+apm/                    init.d/               protocols
+apparmor/               initramfs-tools/      pulse/
+apparmor.d/             inputrc               .pwd.lock
+apport/                 insserv.conf.d/       python/
+appstream.conf          iproute2/             python2.7/
+apt/                    issue                 python3/
+avahi/                  issue.net             python3.6/
+avrdude.conf            .java/                rc0.d/
+bash.bashrc             java-11-openjdk/      rc1.d/
+bash_completion         kernel/               rc2.d/
+bash_completion.d/      kernel-img.conf       rc3.d/
+bindresvport.blacklist  kerneloops.conf       rc4.d/
+binfmt.d/               ldap/                 rc5.d/
+bluetooth/              ld.so.cache           rc6.d/
+bonobo-activation/      ld.so.conf            rcS.d/
+brlapi.key              ld.so.conf.d/         resolvconf/
+brltty/                 legal                 resolv.conf@
+brltty.conf             libao.conf            rmt*
+ca-certificates/        libaudit.conf         rpc
+ca-certificates.conf    libblockdev/          rsyslog.conf
+calendar/               libibverbs.d/         rsyslog.d/
+chatscripts/            libnl-3/              sane.d/
+console-setup/          libpaper.d/           securetty
+cracklib/               libreoffice/          security/
+cron.d/                 lighttpd/             selinux/
+cron.daily/             lintianrc             sensors3.conf
+cron.hourly/            locale.alias          sensors.d/
+cron.monthly/           locale.gen            services
+crontab                 localtime@            sgml/
+cron.weekly/            logcheck/             shadow
+cups/                   login.defs            shadow-
+cupshelpers/            logrotate.conf        shells
+dbus-1/                 logrotate.d/          skel/
+dconf/                  lsb-release           sound/
+debconf.conf            ltrace.conf           speech-dispatcher/
+debian_version          lynx/                 ssh/
+default/                machine-id            ssl/
+deluser.conf            machine-info          subgid
+depmod.d/               magic                 subgid-
+dhcp/                   magic.mime            subuid
+dictionaries-common/    mailcap               subuid-
+dkms/                   mailcap.order         sudoers
+dpkg/                   manpath.config        sudoers.d/
+drirc                   matplotlibrc          sysctl.conf
+emacs/                  mime.types            sysctl.d/
+environment             mke2fs.conf           systemd/
+ffserver.conf           modprobe.d/           terminfo/
+firebird/               modules               texmf/
+firefox/                modules-load.d/       thermald/
+fish/                   mongod.conf           thunderbird/
+fonts/                  mtab@                 timezone
+fstab                   mtools.conf           tmpfiles.d/
+fuse.conf               nanorc                tor/
+fwupd/                  netplan/              ucf.conf
+gai.conf                network/              udev/
+gconf/                  networkd-dispatcher/  udisks2/
+gdb/                    NetworkManager/       ufw/
+gdm3/                   networks              updatedb.conf
+geoclue/                newt/                 update-manager/
+ghostscript/            nsswitch.conf         update-motd.d/
+glvnd/                  openal/               update-notifier/
+gnome/                  OpenCL/               UPower/
+gnome-vfs-2.0/          openmpi/              usb_modeswitch.conf
+groff/                  opt/                  usb_modeswitch.d/
+group                   os-release@           vdpau_wrapper.cfg
+group-                  PackageKit/           viewmol/
+grub.d/                 pam.conf              vim/
+gshadow                 pam.d/                vtrgb@
+gshadow-                papersize             wgetrc
+gss/                    passwd                wpa_supplicant/
+gtk-2.0/                passwd-               X11/
+gtk-3.0/                pcmcia/               xdg/
+hdparm.conf             perl/                 xml/
+host.conf               php/                  zsh_command_not_found
+hostname                pki/
+ʘ l > grep mysql
+bash: grep: Permission denied
+ʘ sudo !!
+sudo l > grep mysql
+bash: grep: Permission denied
+ʘ l | grep mysql
+ʘ sudo rm -rf /var/lib/mysql*
+ʘ sudo apt-get purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'mysqltcl' for glob 'mysql*'
+Note, selecting 'mysql-workbench' for glob 'mysql*'
+Note, selecting 'mysql-client-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.0' for glob 'mysql*'
+Note, selecting 'mysql-server-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.7' for glob 'mysql*'
+Note, selecting 'mysql-utilities' for glob 'mysql*'
+Note, selecting 'mysql-testsuite' for glob 'mysql*'
+Note, selecting 'mysql-server' for glob 'mysql*'
+Note, selecting 'mysql-client' for glob 'mysql*'
+Note, selecting 'mysql-workbench-community' for glob 'mysql*'
+Note, selecting 'mysql-sandbox' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-workbench-gpl' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.5' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.6' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common' for glob 'mysql*'
+Note, selecting 'mysql-workbench-oss' for glob 'mysql*'
+Note, selecting 'mysqltuner' for glob 'mysql*'
+Note, selecting 'mysql-workbench-data' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-source-5.7' for glob 'mysql*'
+Package 'mysql-client-5.5' is not installed, so not removed
+Package 'mysql-client-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.6' is not installed, so not removed
+Package 'mysql-client-core-5.5' is not installed, so not removed
+Package 'mysql-client-core-5.6' is not installed, so not removed
+Note, selecting 'mysql-common' instead of 'mysql-common-5.6'
+Package 'mysql-server-5.5' is not installed, so not removed
+Package 'mysql-server-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.6' is not installed, so not removed
+Package 'mysql-server-5.0' is not installed, so not removed
+Package 'mysql-server-5.1' is not installed, so not removed
+Package 'mysql-server-core-5.1' is not installed, so not removed
+Package 'mysql-workbench-gpl' is not installed, so not removed
+Package 'mysql-workbench-oss' is not installed, so not removed
+Package 'mysql-sandbox' is not installed, so not removed
+Package 'mysql-utilities' is not installed, so not removed
+Package 'mysql-workbench' is not installed, so not removed
+Package 'mysql-workbench-data' is not installed, so not removed
+Package 'mysqltcl' is not installed, so not removed
+Package 'mysqltuner' is not installed, so not removed
+Package 'mysql-source-5.7' is not installed, so not removed
+Package 'mysql-testsuite' is not installed, so not removed
+Package 'mysql-testsuite-5.7' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common firebird3.0-common-doc libaio1 libapr1 libaprutil1
+  libevent-core-2.1-6 libfbclient2 libpcrecpp0v5 libserf-1-1 libsvn1
+  libtommath1 libzip4 zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  hydra* hydra-gtk* libmysqlclient-dev* libmysqlclient20* mysql-client*
+  mysql-client-5.7* mysql-client-core-5.7* mysql-common* mysql-server*
+  mysql-server-5.7* mysql-server-core-5.7* mysql-workbench-community*
+0 upgraded, 0 newly installed, 12 to remove and 1 not upgraded.
+After this operation, 283 MB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 230358 files and directories currently installed.)
+Removing hydra-gtk (8.6-1build1) ...
+Removing hydra (8.6-1build1) ...
+Removing libmysqlclient-dev (5.7.28-0ubuntu0.18.04.4) ...
+Removing libmysqlclient20:amd64 (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-client (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-server (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+update-alternatives: warning: alternative /etc/mysql/mysql.cnf (part of link group my.cnf) doesn't exist; removing from list of alternatives
+update-alternatives: warning: /etc/alternatives/my.cnf is dangling; it will be updated with best choice
+Removing mysql-client-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-client-core-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-common (5.8+1.0.4) ...
+Removing mysql-server-core-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Removing mysql-workbench-community (8.0.17-1ubuntu18.04) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for shared-mime-info (1.9-2) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+(Reading database ... 228676 files and directories currently installed.)
+Purging configuration files for mysql-common (5.8+1.0.4) ...
+Purging configuration files for mysql-server-5.7 (5.7.28-0ubuntu0.18.04.4) ...
+Processing triggers for systemd (237-3ubuntu10.33) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+ureadahead will be reprofiled on next reboot
+ʘ sudo apt-get purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'mysqltcl' for glob 'mysql*'
+Note, selecting 'mysql-workbench' for glob 'mysql*'
+Note, selecting 'mysql-client-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.0' for glob 'mysql*'
+Note, selecting 'mysql-server-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.7' for glob 'mysql*'
+Note, selecting 'mysql-utilities' for glob 'mysql*'
+Note, selecting 'mysql-testsuite' for glob 'mysql*'
+Note, selecting 'mysql-server' for glob 'mysql*'
+Note, selecting 'mysql-client' for glob 'mysql*'
+Note, selecting 'mysql-sandbox' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.5' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.6' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common' for glob 'mysql*'
+Note, selecting 'mysqltuner' for glob 'mysql*'
+Note, selecting 'mysql-workbench-data' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-source-5.7' for glob 'mysql*'
+Package 'mysql-client-5.5' is not installed, so not removed
+Package 'mysql-client-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.6' is not installed, so not removed
+Package 'mysql-client-core-5.5' is not installed, so not removed
+Package 'mysql-client-core-5.6' is not installed, so not removed
+Note, selecting 'mysql-common' instead of 'mysql-common-5.6'
+Package 'mysql-server-5.5' is not installed, so not removed
+Package 'mysql-server-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.6' is not installed, so not removed
+Package 'mysql-server-5.0' is not installed, so not removed
+Package 'mysql-server-5.1' is not installed, so not removed
+Package 'mysql-server-core-5.1' is not installed, so not removed
+Package 'mysql-common' is not installed, so not removed
+Package 'mysql-sandbox' is not installed, so not removed
+Package 'mysql-utilities' is not installed, so not removed
+Package 'mysql-workbench' is not installed, so not removed
+Package 'mysql-workbench-data' is not installed, so not removed
+Package 'mysqltcl' is not installed, so not removed
+Package 'mysqltuner' is not installed, so not removed
+Package 'mysql-client' is not installed, so not removed
+Package 'mysql-client-5.7' is not installed, so not removed
+Package 'mysql-client-core-5.7' is not installed, so not removed
+Package 'mysql-server' is not installed, so not removed
+Package 'mysql-server-5.7' is not installed, so not removed
+Package 'mysql-server-core-5.7' is not installed, so not removed
+Package 'mysql-source-5.7' is not installed, so not removed
+Package 'mysql-testsuite' is not installed, so not removed
+Package 'mysql-testsuite-5.7' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common firebird3.0-common-doc libaio1 libapr1 libaprutil1
+  libevent-core-2.1-6 libfbclient2 libpcrecpp0v5 libserf-1-1 libsvn1
+  libtommath1 libzip4 zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+ʘ sudo apt-get purge mysql*
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'mysqltcl' for glob 'mysql*'
+Note, selecting 'mysql-workbench' for glob 'mysql*'
+Note, selecting 'mysql-client-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.0' for glob 'mysql*'
+Note, selecting 'mysql-server-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-5.7' for glob 'mysql*'
+Note, selecting 'mysql-utilities' for glob 'mysql*'
+Note, selecting 'mysql-testsuite' for glob 'mysql*'
+Note, selecting 'mysql-server' for glob 'mysql*'
+Note, selecting 'mysql-client' for glob 'mysql*'
+Note, selecting 'mysql-sandbox' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-client-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.5' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.6' for glob 'mysql*'
+Note, selecting 'mysql-testsuite-5.7' for glob 'mysql*'
+Note, selecting 'mysql-common' for glob 'mysql*'
+Note, selecting 'mysqltuner' for glob 'mysql*'
+Note, selecting 'mysql-workbench-data' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.1' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.5' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.6' for glob 'mysql*'
+Note, selecting 'mysql-server-core-5.7' for glob 'mysql*'
+Note, selecting 'mysql-source-5.7' for glob 'mysql*'
+Package 'mysql-client-5.5' is not installed, so not removed
+Package 'mysql-client-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.6' is not installed, so not removed
+Package 'mysql-client-core-5.5' is not installed, so not removed
+Package 'mysql-client-core-5.6' is not installed, so not removed
+Note, selecting 'mysql-common' instead of 'mysql-common-5.6'
+Package 'mysql-server-5.5' is not installed, so not removed
+Package 'mysql-server-5.6' is not installed, so not removed
+Package 'mysql-server-core-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.5' is not installed, so not removed
+Package 'mysql-testsuite-5.6' is not installed, so not removed
+Package 'mysql-server-5.0' is not installed, so not removed
+Package 'mysql-server-5.1' is not installed, so not removed
+Package 'mysql-server-core-5.1' is not installed, so not removed
+Package 'mysql-common' is not installed, so not removed
+Package 'mysql-sandbox' is not installed, so not removed
+Package 'mysql-utilities' is not installed, so not removed
+Package 'mysql-workbench' is not installed, so not removed
+Package 'mysql-workbench-data' is not installed, so not removed
+Package 'mysqltcl' is not installed, so not removed
+Package 'mysqltuner' is not installed, so not removed
+Package 'mysql-client' is not installed, so not removed
+Package 'mysql-client-5.7' is not installed, so not removed
+Package 'mysql-client-core-5.7' is not installed, so not removed
+Package 'mysql-server' is not installed, so not removed
+Package 'mysql-server-5.7' is not installed, so not removed
+Package 'mysql-server-core-5.7' is not installed, so not removed
+Package 'mysql-source-5.7' is not installed, so not removed
+Package 'mysql-testsuite' is not installed, so not removed
+Package 'mysql-testsuite-5.7' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  firebird3.0-common firebird3.0-common-doc libaio1 libapr1 libaprutil1
+  libevent-core-2.1-6 libfbclient2 libpcrecpp0v5 libserf-1-1 libsvn1
+  libtommath1 libzip4 zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+ʘ sudo apt-get autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  firebird3.0-common firebird3.0-common-doc libaio1 libapr1 libaprutil1
+  libevent-core-2.1-6 libfbclient2 libpcrecpp0v5 libserf-1-1 libsvn1
+  libtommath1 libzip4 zlib1g-dev
+0 upgraded, 0 newly installed, 13 to remove and 1 not upgraded.
+After this operation, 8 281 kB disk space will be freed.
+Do you want to continue? [Y/n] Y
+(Reading database ... 228661 files and directories currently installed.)
+Removing libfbclient2:amd64 (3.0.2.32703.ds4-11ubuntu2) ...
+Removing firebird3.0-common (3.0.2.32703.ds4-11ubuntu2) ...
+Removing firebird3.0-common-doc (3.0.2.32703.ds4-11ubuntu2) ...
+Removing libaio1:amd64 (0.3.110-5ubuntu0.1) ...
+Removing libsvn1:amd64 (1.9.7-4ubuntu1) ...
+Removing libserf-1-1:amd64 (1.3.9-6) ...
+Removing libaprutil1:amd64 (1.6.1-2) ...
+Removing libevent-core-2.1-6:amd64 (2.1.8-stable-4build1) ...
+Removing libpcrecpp0v5:amd64 (2:8.39-9) ...
+Removing libtommath1:amd64 (1.0.1-1) ...
+Removing libzip4:amd64 (1.1.2-1.1) ...
+Removing zlib1g-dev:amd64 (1:1.2.11.dfsg-0ubuntu2) ...
+Removing libapr1:amd64 (1.6.3-2) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+ʘ sudo apt-get autoclean
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Del intel-microcode 3.20191115.1ubuntu0.18.04.1 [2 409 kB]
+ʘ sudo apt-get remove dbconfig-mysqls
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package 'dbconfig-mysql' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+ʘ sudo apt-get dist-upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  intel-microcode
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2 407 kB of archives.
+After this operation, 1 024 B disk space will be freed.
+Do you want to continue? [Y/n] Y
+Get:1 http://fr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 intel-microcode amd64 3.20191115.1ubuntu0.18.04.2 [2 407 kB]
+Fetched 2 407 kB in 1s (2 642 kB/s)              
+(Reading database ... 228515 files and directories currently installed.)
+Preparing to unpack .../intel-microcode_3.20191115.1ubuntu0.18.04.2_amd64.deb ...
+Unpacking intel-microcode (3.20191115.1ubuntu0.18.04.2) over (3.20191115.1ubuntu0.18.04.1) ...
+Setting up intel-microcode (3.20191115.1ubuntu0.18.04.2) ...
+update-initramfs: deferring update (trigger activated)
+intel-microcode: microcode will be updated at next boot
+Processing triggers for initramfs-tools (0.130ubuntu3.9) ...
+update-initramfs: Generating /boot/initrd.img-4.15.0-72-generic
+s
+

@@ -42,3 +42,7 @@ I then rebooted. Then in the TTY (Ctrl + Alt + F2), I logged in and run the comm
 ## Update aezyr (29/09/2022)
 
 Here we go again. Trying to upgrade from 20.04 LTS to 22 LTS.
+
+[Upgrade Ubuntu](https://itsubuntu.com/how-to-upgrade-ubuntu-22-04-lts/)
+
+[Using PPA in Ubuntu Linux | It&#39;s FOOS](https://itsfoss.com/ppa-guide/)

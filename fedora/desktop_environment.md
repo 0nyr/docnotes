@@ -18,8 +18,20 @@ Plug the old disk. Use `rsync` to copy files and folders. `rsync -vruhpog --prog
 + Add Flatpack `/var/lib/flatpak/exports/bin` to PATH [mode details](https://theevilskeleton.gitlab.io/2022/09/28/what-not-to-recommend-to-flatpak-users.html) to make apps available via their shortcut name.
 + Install **VSCode** from the official Microsoft website as a `.rpm` file. Then connect to GitHub via VSCode to activate synchronization.
 
-## Install desktop environments
+## Install other desktop environments
+More info [here](https://www.tecmint.com/install-and-switch-desktop-environments-in-fedora/)
 
-`sudo dnf grouplist -v`: list available grouplist. Can be used to see available desktop environments.
-`sudo dnf install <xxx-desktop-environment>`: install environment. Once the installation if done, `reboot`. While you login, you can select the environment.
-``
+1. `sudo dnf grouplist -v`: list available grouplist. Can be used to see available desktop environments.
+2. `sudo dnf install @<xxx-desktop-environment>`: install environment. Once the installation if done, `reboot`. While you login, you can select the environment.
+```shell
+(base) [onyr@kenzael ~]$ sudo dnf install @i3-desktop-environment
+[...]
+Total download size: 32 M
+Installed size: 91 M
+Is this ok [y/N]: y
+[...]
+```
+3. `sudo dnf install switchdesk switchdesk-gui`: Install utilities to switch desktop from command line or a GUI.
+4. Switch desktop with a command like `sudo switchdesk cinnamon`.
+
+

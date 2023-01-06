@@ -30,11 +30,40 @@
 
 ## Install process
 
+### Install on Ubuntu
 See [Install PostgreSQL 14 in Ubuntu](https://www.linuxshelltips.com/install-postgresql-in-ubuntu/) and [Install pgAdmin in Ubuntu](https://www.pgadmin.org/download/pgadmin-4-apt/) for all info.
 
 1. Install Postgres. Start by adding the signing key and PPA, then install package. The current latest LTS package is `postgresql-14`.
 2. Setup Postgres. `systemctl enable` to make Postgres start after reboot. Don't forget to set a password for the default `postgres` user. See section below.
 3. Install pgAdmin. Get key and PPA then install. Setup a master keyword and also provide the password of the `postgres` user using `sudo -u postgres psql` to connect to the shell of Postgres, then `\password postgres` to change the password of `postgres` user.
+
+### Install on Fedora
+> Tested on Fedora 37
+
+More info [here](https://www.postgresql.org/download/linux/redhat/).
+1. `sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/F-37-x86_64/pgdg-fedora-repo-latest.noarch.rpm` to Install the repository RPM.
+2. `sudo dnf install -y postgresql15-server` to Install PostgreSQL.
+3. Optional commands:
+```shell
+# Optionally initialize the database and enable automatic start:
+sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
+sudo systemctl enable postgresql-15
+sudo systemctl start postgresql-15
+```
+4. Change the password of the DB user `postgres`. First, connect to Postgres shell with `sudo -u postgres psql`, then change the password of the current `postgres` DB user with `\password`. If you want, you can also set a password for the `postgres` unix user automatically created.
+
+##### Get pgAdmin4
+> Tested on Fedora 37
+
+More info [here](https://www.pgadmin.org/download/pgadmin-4-rpm/).
+1. `sudo rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm`.
+2. `sudo yum install pgadmin4` to install for both desktop and web modes.
+3. Add pgAdmin4 in the PATH. Edit `~/.bashrc` with the following:
+```shell
+### pgAdmin4
+export PATH="/usr/pgadmin4/bin:$PATH"
+```
+4. Connect pgAdmin4 (see section below).
 
 ## Connect PgAdmin
 
@@ -50,7 +79,7 @@ Adding new server steps:
 6) Enter "Port" (default port for PostgreSQL server is "5432")
 7) Enter "Maintenance Database" name (default is "postgres")
 8) Enter "User Name" (default user is "postgres")
-9) Enter "Password" (Password which you gave when you installed PostgreSQL database for "postgres" user)
+9) Enter "Password" (Password which you gave when you installed PostgreSQL database for "postgres" DB user)
 10) Click on CheckBox "Save password?" to save your password in pgAdmin4 for future use.
 
 Now as you can see, "Save" button gets enable in dialog, just click on it.
@@ -89,7 +118,7 @@ by taking the OS username you’re operating as and comparing it with the allowe
 
 [Installing PostgreSQL](https://phoenixnap.com/kb/how-to-install-postgresql-on-ubuntu) creates a default database and user account, both called *‘postgres.’*
 
-`sudo su postgres` : change current user to `postgres`
+`sudo su postgres` : change current unix user to `postgres`
 
 `psql` : when you are the `prostgres` user, connect to the db cli.
 
@@ -106,7 +135,7 @@ You are connected to database "postgres" as user "postgres" via socket in "/var/
 
 **change postgres unix user password :**
 
-I don't know why but I didn't know the password for the newly created `postgres` user. I had to change its password manually with `root` access.
+I don't know why but I didn't know the password for the newly created `postgres` unix user. I had to change its password manually with `root` access.
 
 `sudo passwd postgres` : change password for user `postgres`. this command must be done from a user with `sudo` access, namely users in the `sudoers` file.
 
@@ -118,11 +147,11 @@ Password:
 postgres@kenzae:/home/onyr$
 ```
 
-**change/set password for postgres db user :**
+**change/set password for postgres DB user :**
 
 > **WARN :** The db user and the UNIX user both have the name `postgres` but the designate two different things.
 
-`\password` : change/set the password for the default `postgres` db user. This works a a command in the postgres `psql` cli. You need to connect to this cli first to use this command.
+`\password` : change/set the password for the default `postgres` db user. This works a a command in the postgres `psql` cli. You need to connect to this CLI first to use this command.
 
 ```shell
  ❮ onyr ★  kenzae❯ ❮ ~❯❯ sudo su postgres
@@ -155,7 +184,7 @@ Fisrt, you need a password for the user `postgres`.
 
 ## Postgres CLI
 
-`sudo -u postgres psql`: 
+`sudo -u postgres psql`: Access the Postgres shell as unix user `postgres`.
 
 ### show databases
 
